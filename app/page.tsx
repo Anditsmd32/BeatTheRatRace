@@ -199,7 +199,7 @@ export default function StablecoinLandingPage() {
                   className="w-full bg-white text-black hover:bg-yellow-300 text-xl py-4 font-bold border-4 border-black"
                   asChild
                 >
-                  <a href="/services">BOOK MY CALL →</a>
+                  <a href="/auth">BOOK MY CALL →</a>
                 </Button>
               </div>
             </div>
@@ -272,7 +272,7 @@ export default function StablecoinLandingPage() {
             className="bg-black text-white hover:bg-stone-800 text-2xl px-12 py-6 font-black mb-6 border-4 border-black transform hover:scale-110 transition-transform"
             asChild
           >
-            <a href="/stablecoins-vs-uk-banks-guide.pdf" download="Stablecoins-vs-UK-Banks-Ultimate-Guide.pdf">
+            <a href="https://drive.google.com/file/d/1234567890/view" target="_blank" rel="noopener noreferrer">
               GET FREE GUIDE →
             </a>
           </Button>
@@ -280,7 +280,7 @@ export default function StablecoinLandingPage() {
             className="bg-white text-black hover:bg-yellow-300 text-xl px-8 py-4 font-bold border-4 border-black transform hover:scale-105 transition-transform mb-4"
             asChild
           >
-            <a href="/services">START LEARNING TODAY →</a>
+            <a href="/auth">START LEARNING TODAY →</a>
           </Button>
           <p className="text-black font-bold text-lg">NO JARGON. NO HYPE. JUST RESULTS.</p>
         </div>
@@ -321,7 +321,7 @@ export default function StablecoinLandingPage() {
                 href={link.href}
                 className="hover:bg-yellow-300 hover:text-black px-3 py-1 transition-colors"
               >
-                {link.text}
+                <a href="https://drive.google.com/file/d/1234567890/view" target="_blank" rel="noopener noreferrer">
               </a>
             ))}
           </div>

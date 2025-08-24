@@ -125,7 +125,7 @@ export default function VideoTutorialsPage() {
                 <p className="text-stone-600 font-medium text-sm mb-4">{video.description}</p>
                 <Button className="w-full bg-yellow-300 text-black hover:bg-yellow-400 font-bold border-2 border-black">
                   <Play className="h-4 w-4 mr-2" />
-                  WATCH NOW
+                  <Link href="/services">WATCH NOW</Link>
                 </Button>
               </div>
             ))}

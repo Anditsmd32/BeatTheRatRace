@@ -77,7 +77,7 @@ export default function GuidesPage() {
                 Read this to learn about Stablecoins in general before starting.
               </p>
               <Button className="bg-black text-white hover:bg-stone-800 font-bold border-4 border-black" asChild>
-                <a href="/stablecoins-vs-uk-banks-guide.pdf" download="Stablecoins-vs-UK-Banks-Ultimate-Guide.pdf">
+                <a href="https://drive.google.com/file/d/1234567890/view" target="_blank" rel="noopener noreferrer">
                   <Download className="h-4 w-4 mr-2" />
                   DOWNLOAD FREE PDF
                 </a>
