@@ -1,37 +1,9 @@
-'use client'
-
 import { Button } from "@/components/ui/button"
 import { CheckCircle, Calendar, Shield } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
-import { loadStripe } from '@stripe/stripe-js'
-
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY!)
 
 export default function ServicesPage() {
-  const handlePayment = async (priceType: 'monthly' | 'oneoff') => {
-    try {
-      const response = await fetch('/api/stripe/create-checkout-session', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ priceType })
-      })
-
-      const { sessionId } = await response.json()
-      
-      if (response.ok) {
-        const stripe = await stripePromise
-        await stripe?.redirectToCheckout({ sessionId })
-      } else {
-        // User not authenticated, redirect to auth page
-        window.location.href = '/auth'
-      }
-    } catch (error) {
-      console.error('Payment error:', error)
-      alert('Payment failed. Please try again.')
-    }
-  }
-
   return (
     <div className="min-h-screen bg-stone-50 font-mono">
       <header className="border-b-4 border-black bg-white">
@@ -130,10 +102,7 @@ export default function ServicesPage() {
                 <div className="text-sm font-bold">CANCEL ANYTIME</div>
               </div>
 
-              <Button 
-                onClick={() => handlePayment('monthly')}
-                className="w-full bg-black text-white hover:bg-stone-800 text-xl py-6 font-bold border-4 border-black mb-4"
-              >
+              <Button className="w-full bg-black text-white hover:bg-stone-800 text-xl py-6 font-bold border-4 border-black mb-4">
                 JOIN THE CLUB →
               </Button>
 
@@ -173,10 +142,7 @@ export default function ServicesPage() {
                 <div className="text-sm font-bold">ONE-TIME PAYMENT</div>
               </div>
 
-              <Button 
-                onClick={() => handlePayment('oneoff')}
-                className="w-full bg-white text-black hover:bg-yellow-300 text-xl py-6 font-bold border-4 border-black mb-4"
-              >
+              <Button className="w-full bg-white text-black hover:bg-yellow-300 text-xl py-6 font-bold border-4 border-black mb-4">
                 BOOK MY CALL →
               </Button>
 
